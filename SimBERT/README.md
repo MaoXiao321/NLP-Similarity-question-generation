@@ -32,13 +32,13 @@ pyhton simbert.py
 ```
 pyhton gen_synonyms_test.py
 ```
-bug修改：
-（1）from bert4keras.backend import keras, K报错：Descriptors cannot not be created directly.
-将protobuf版本降级：pip install protobuf==3.20.*
-（2）type object 'AutoRegressiveDecoder' has no attribute 'set_rtype'
-只是换了函数名，直接把 set_rtype 改成 wraps 就好了
-（3）encode() got an unexpected keyword argument 'max_length'
-max_length换成maxlen
+bug修改：<br>
+（1）from bert4keras.backend import keras, K报错：Descriptors cannot not be created directly.<br>
+将protobuf版本降级：pip install protobuf==3.20.*<br>
+（2）type object 'AutoRegressiveDecoder' has no attribute 'set_rtype'<br>
+只是换了函数名，直接把 set_rtype 改成 wraps 就好了<br>
+（3）encode() got an unexpected keyword argument 'max_length'<br>
+max_length换成maxlen<br>
 
 
 ## 在指定内容中找到最相近的topK句子
