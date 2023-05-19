@@ -14,6 +14,7 @@ from bert4keras.tokenizers import Tokenizer
 from bert4keras.snippets import sequence_padding, AutoRegressiveDecoder
 from bert4keras.snippets import uniout
 from keras.layers import *
+import time
 
 maxlen = 32
 
@@ -80,30 +81,15 @@ def gen_synonyms(text, n=100, k=20):
     return [r[i + 1] for i in argsort[:k]]
 
 
+start = time.time()
 print(gen_synonyms(u'无冷热选择权'))
+end = time.time()
+print(f'用时：{round(end-start)}s.')
 
 """
-gen_synonyms(u'微信和支付宝哪个好？')
-[
-    u'微信和支付宝，哪个好?',
-    u'微信和支付宝哪个好',
-    u'支付宝和微信哪个好',
-    u'支付宝和微信哪个好啊',
-    u'微信和支付宝那个好用？',
-    u'微信和支付宝哪个好用',
-    u'支付宝和微信那个更好',
-    u'支付宝和微信哪个好用',
-    u'微信和支付宝用起来哪个好？',
-    u'微信和支付宝选哪个好',
-    u'微信好还是支付宝比较用',
-    u'微信与支付宝哪个',
-    u'支付宝和微信哪个好用一点？',
-    u'支付宝好还是微信',
-    u'微信支付宝究竟哪个好',
-    u'支付宝和微信哪个实用性更好',
-    u'好，支付宝和微信哪个更安全？',
-    u'微信支付宝哪个好用？有什么区别',
-    u'微信和支付宝有什么区别？谁比较好用',
-    u'支付宝和微信哪个好玩'
-]
- """
+['无冷热选择权的选择', '无冷热选择权是什么', '什么是无冷热选择权', '无冷热选择权的概念', '如何选择无冷热选择权', '什么叫无冷热选择权', '无冷热选择权
+的问题', '什么是无冷热选择权？', '无冷热选择权是什么？', '无冷热选择权的意思', '无冷热选择权，是否有用', '什么叫做无冷热选择权', '如何判断无冷热选择 
+权', '冷热选择权', '无冷热选择权的概念是什么', '无冷热选择权是什么意思', '为什么说无冷热选择权', '无冷热选择权是什么意思?', '无冷热选择权是什么意思？
+', '无冷热选择权是怎么回事']
+用时：84s.
+"""
